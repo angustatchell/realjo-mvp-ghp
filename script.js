@@ -14,7 +14,9 @@ if (hero) {
   const heroImages = [
     'assets/img/hero-1.jpg',
     'assets/img/hero-2.jpg',
-    'assets/img/hero-3.jpg'
+    'assets/img/hero-3.jpg',
+    'assets/img/hero-4.jpg',
+    'assets/img/hero-5.jpg'
   ];
   let currentHero = 0;
 
