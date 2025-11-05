@@ -8,23 +8,32 @@ setInterval(() => {
   slides[idx].classList.add('is-active');
 }, 5000);
 
-// --- HERO BACKGROUND ROTATION ---
-const hero = document.querySelector('.hero');
-if (hero) {
-  const heroImages = [
-    'assets/img/hero-1.jpg',
-    'assets/img/hero-2.jpg',
-    'assets/img/hero-3.jpg',
-    'assets/img/hero-4.jpg',
-    'assets/img/hero-5.jpg'
-  ];
-  let currentHero = 0;
+// // --- HERO BACKGROUND ROTATION ---
+// const hero = document.querySelector('.hero');
+// if (hero) {
+//   const heroImages = [
+//     'assets/img/hero-1.jpg',
+//     'assets/img/hero-2.jpg',
+//     'assets/img/hero-3.jpg',
+//     'assets/img/hero-4.jpg',
+//     'assets/img/hero-5.jpg'
+//   ];
+//   let currentHero = 0;
 
-  // Initialize first image
-  hero.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.35)), url('${heroImages[0]}')`;
+//   // Initialize first image
+//   hero.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.35)), url('${heroImages[0]}')`;
 
-  setInterval(() => {
-    currentHero = (currentHero + 1) % heroImages.length;
-    hero.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.35)), url('${heroImages[currentHero]}')`;
-  }, 5000); // 5-second rotation
-}
+//   setInterval(() => {
+//     currentHero = (currentHero + 1) % heroImages.length;
+//     hero.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.35)), url('${heroImages[currentHero]}')`;
+//   }, 5000); // 5-second rotation
+// }
+
+// --- HERO IMAGE CROSSFADE ---
+const heroImgs = document.querySelectorAll('.hero-images img');
+let heroIdx = 0;
+setInterval(() => {
+  heroImgs[heroIdx].classList.remove('active');
+  heroIdx = (heroIdx + 1) % heroImgs.length;
+  heroImgs[heroIdx].classList.add('active');
+}, 5000);
