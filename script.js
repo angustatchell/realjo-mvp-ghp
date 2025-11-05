@@ -29,11 +29,25 @@ setInterval(() => {
 //   }, 5000); // 5-second rotation
 // }
 
-// --- HERO IMAGE CROSSFADE ---
-const heroImgs = document.querySelectorAll('.hero-images img');
-let heroIdx = 0;
-setInterval(() => {
-  heroImgs[heroIdx].classList.remove('active');
-  heroIdx = (heroIdx + 1) % heroImgs.length;
-  heroImgs[heroIdx].classList.add('active');
-}, 5000);
+// // --- HERO IMAGE CROSSFADE ---
+// const heroImgs = document.querySelectorAll('.hero-images img');
+// let heroIdx = 0;
+// setInterval(() => {
+//   heroImgs[heroIdx].classList.remove('active');
+//   heroIdx = (heroIdx + 1) % heroImgs.length;
+//   heroImgs[heroIdx].classList.add('active');
+// }, 5000);
+
+// --- HERO IMAGE CROSSFADE WITH OVERLAY ---
+const heroImages = document.querySelectorAll('.hero-images img');
+if (heroImages.length) {
+  let i = 0;
+  heroImages[0].classList.add('active');
+
+  const intervalMs = 5000; // change slide every 5s
+  setInterval(() => {
+    heroImages[i].classList.remove('active');
+    i = (i + 1) % heroImages.length;
+    heroImages[i].classList.add('active');
+  }, intervalMs);
+}
